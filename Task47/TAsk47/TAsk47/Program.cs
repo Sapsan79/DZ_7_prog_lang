@@ -1,4 +1,4 @@
-﻿//Задача 47. Задайте двумерный массив размером m×n,
+﻿//Задача 47.Задайте двумерный массив размером m×n,
 //заполненный случайными вещественными числами.
 //m = 3, n = 4.
 //0,5 7 - 2 - 0,2
@@ -25,7 +25,7 @@ void FillDimension(int index, double[,] Array)
 {
     for (int i = 0; i < Array.GetLength(1); i++)
     {
-        Array[index, i] = new Random().NextDouble()*100;
+        Array[index, i] = Math.Round (new Random().NextDouble()*100,2);
     }
 }
 void GetArrayAsString(double[,] Array)
