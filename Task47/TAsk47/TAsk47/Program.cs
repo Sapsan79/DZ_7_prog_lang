@@ -25,7 +25,9 @@ void FillDimension(int index, double[,] Array)
 {
     for (int i = 0; i < Array.GetLength(1); i++)
     {
-        Array[index, i] = Math.Round (new Random().NextDouble()*100,2);
+        Array[index, i] = new Random().NextDouble() * 100;
+
+        //Array[index, i] = Math.Round (new Random().NextDouble()*100,2);//ограничение по двум символам после запятой
     }
 }
 void GetArrayAsString(double[,] Array)
@@ -34,7 +36,8 @@ void GetArrayAsString(double[,] Array)
     {
         for (int j = 0; j < Array.GetLength(1); j++)
         {
-            Console.Write($"{Array[i, j]} ");
+            //Console.Write($"{Array[i, j]} ");
+            Console.Write(string.Format("{0:0.##} ", Array[i, j]));//ограничение на 2 символа
         }
         Console.WriteLine();
     }
